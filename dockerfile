@@ -8,11 +8,11 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y gcc
 
 # Copy requirements and install dependencies
-COPY requirements.txt .
+COPY /app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy your FastAPI app code
-COPY main.py .
+COPY /app/main.py .
 
 # Expose FastAPI port
 EXPOSE 8000
